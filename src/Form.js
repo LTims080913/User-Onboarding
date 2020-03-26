@@ -15,7 +15,6 @@ const formSchema = yup.object().shape({
     terms: yup.boolean().oneOf([true], "Please agree to the Terms and Conditions"),
     phoneNumber: yup.string().required("Please inter your 10 digit phone number"),
     shirt: yup.string().required("Please choose your shirt size"),
-    color: yup.string().required("Choose a color for your shirt"),
     race: yup.string().required("Please choose a race length"),
     gender: yup.string().required("Please select your gender from the drop down menu")
 
@@ -31,7 +30,6 @@ const Form = () => {
         terms: "",
         phoneNumber: "",
         shirt: "",
-        color: "",
         race: "",
         gender: ""
     });
@@ -43,7 +41,6 @@ const Form = () => {
         terms: "",
         phoneNumber: "",
         shirt: "",
-        color: "",
         race: "",
         gender: ""
     })
@@ -87,7 +84,6 @@ const Form = () => {
                     terms: "",
                     phoneNumber: "",
                     shirt: "",
-                    color: "",
                     race: "",
                     gender: ""
                 })
@@ -185,17 +181,7 @@ const Form = () => {
                                     </select>
                                     {errors.shirt.length > 0 ? <p className="error">{errors.shirt}</p> : null}
                                 </lable>
-                                <label htmlFor="color" className="title">
-                                    Shirt Color:
-                <input
-                                        id="color"
-                                        type="color"
-                                        name="color"
-                                        value={formState.color}
-                                        onChange={inputChange}
-                                    />
-
-                                </label>
+                               
                                 <lable htmlFor="phoneNumber" className="title">
                                     Phone Number:
                 <input
