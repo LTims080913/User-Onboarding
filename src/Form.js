@@ -12,6 +12,8 @@ const formSchema = yup.object().shape({
            .required("Email is a required field"),
     password: yup.string().required("You must input a password"),
     terms: yup.boolean().oneOf([true], "Please agree to the Terms and Conditions"),
+    phoneNumber: yup.string().required("Please inter your 10 digit phone number"),
+    role: yup.string().required("Please choose a desired role")
 
 });
 
@@ -21,13 +23,17 @@ const [formState, setFormState] = useState({
     name: "",
     email: "",
     password: "",
-    terms: ""
+    terms: "",
+    phoneNumber: "",
+    role: ""
 });
 const [errors, setErrors] = useState({
     name: "",
     email: "",
     password: "",
-    terms: ""
+    terms: "",
+    phoneNumber: "",
+    role: ""
 })
 const [buttonDisabled, setButtonDisabled] = useState(true);
 const [post, setPost] = useState([])
@@ -65,7 +71,9 @@ const formSubmit = e => {
             name: "",
             email: "",
             password: "",
-            terms: ""
+            terms: "",
+            phoneNumber: "",
+            role: ""
         })
        
     })
@@ -118,6 +126,28 @@ const inputChange = e => {
                     onChange={inputChange}
                 />
                 {errors.password.length > 0 ? <p className="error">{errors.password}</p>: null}
+            </lable>
+            <lable htmlFor="role" className="title">
+                Role:
+                <select id="role" name="role" onChange={inputChange} placeholder="Choose A Role">
+                    <option value="web developer"> Web Developer</option>
+                    <option value="computer science engineer">Computer Science Engineer</option>
+                    <option value="front end developer">Front End Developer</option>
+                    <option value="back end developer">Back End Developer</option>
+                    <option value="ui/ux">UI/UX</option>
+                </select>
+                {errors.role.length > 0 ? <p className="error">{errors.role}</p>: null}
+            </lable>
+            <lable htmlFor="phoneNumber" className="title">
+                Phone Number:
+                <input
+                    id="phoneNumber"
+                    type="text"
+                    name="phoneNumber"
+                    value={formState.phoneNumber}
+                    onChange={inputChange}
+                />
+                {errors.phoneNumber.length > 0 ? <p className="error">{errors.phoneNumber}</p>: null}
             </lable><br/>
             <label htmlFor="terms" className="terms" >
                 <input

@@ -11,6 +11,7 @@ html {
   text-align: center;
   background-color: blueviolet;
   width: 170%;
+  border-radius: 15px;
 }
 
 form {
@@ -96,8 +97,8 @@ button:disabled {
 }
 
 .error {
-  font-size: 1.2rem;
-  color: red;
+  font-size: 1.8rem;
+  color: white;
 }
 
 .terms {
@@ -112,7 +113,8 @@ button:disabled {
 }
 h1{
   font-size: 6rem;
-  color: #4dd0e1
+  color: #4dd0e1;
+  margin-top: 15%;
 }
 .title {
   font-size: 2rem;
