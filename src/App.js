@@ -7,7 +7,7 @@ function App() {
     
     <div className="App">
       
-      <h1>Sign Up!</h1>
+      <h1>Sign Up for<br/> Mud Run <br/> 2020</h1>
      <Form/>
     </div>
       
